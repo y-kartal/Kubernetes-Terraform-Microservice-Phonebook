@@ -32,9 +32,15 @@ su - ubuntu -c 'kubectl apply -f https://github.com/coreos/flannel/raw/master/Do
 su - ubuntu -c 'kubectl apply -f https://raw.githubusercontent.com/rancher/local-path-provisioner/v0.0.24/deploy/local-path-storage.yaml'
 sudo -i -u ubuntu kubectl patch storageclass local-path -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
 sudo -i -u ubuntu kubectl taint nodes kube-master node-role.kubernetes.io/control-plane:NoSchedule-
-git clone https://github.com/ykartal2/Aws-Ubuntu-Kubernetes-Microservice-Phonebook.git
-cd Aws-Ubuntu-Kubernetes-Microservice-Phonebook
-su - ubuntu -c 'kubectl apply -f .'
+cd /home/ubuntu
+su - ubuntu -c 'kubectl apply -f https://raw.githubusercontent.com/ykartal2/K8s-Microservice-Phonebook-App/main/k8s/mysql-secret.yml'
+su - ubuntu -c 'kubectl apply -f https://raw.githubusercontent.com/ykartal2/K8s-Microservice-Phonebook-App/main/k8s/pv-pvc.yml'
+su - ubuntu -c 'kubectl apply -f https://raw.githubusercontent.com/ykartal2/K8s-Microservice-Phonebook-App/main/k8s/mysql-service.yml'
+su - ubuntu -c 'kubectl apply -f https://raw.githubusercontent.com/ykartal2/K8s-Microservice-Phonebook-App/main/k8s/mysql-deploy.yml'
+su - ubuntu -c 'sleep 90'
+su - ubuntu -c 'kubectl apply -f https://raw.githubusercontent.com/ykartal2/K8s-Microservice-Phonebook-App/main/k8s/web-deploy.yml'
+su - ubuntu -c 'kubectl apply -f https://raw.githubusercontent.com/ykartal2/K8s-Microservice-Phonebook-App/main/k8s/resultserver-service.yml'
+su - ubuntu -c 'kubectl apply -f https://raw.githubusercontent.com/ykartal2/K8s-Microservice-Phonebook-App/main/k8s/web-service.yml'
 
 
 
