@@ -38,9 +38,7 @@ su - ubuntu -c 'kubectl apply -f https://raw.githubusercontent.com/ykartal2/K8s-
 su - ubuntu -c 'kubectl apply -f https://raw.githubusercontent.com/ykartal2/K8s-Microservice-Phonebook-App/main/k8s/mysql-service.yml'
 su - ubuntu -c 'kubectl apply -f https://raw.githubusercontent.com/ykartal2/K8s-Microservice-Phonebook-App/main/k8s/mysql-deploy.yml'
 su - ubuntu -c 'sleep 90'
-su - ubuntu -c 'kubectl apply -f https://raw.githubusercontent.com/ykartal2/K8s-Microservice-Phonebook-App/main/k8s/web-deploy.yml'
-su - ubuntu -c 'kubectl apply -f https://raw.githubusercontent.com/ykartal2/K8s-Microservice-Phonebook-App/main/k8s/resultserver-service.yml'
-su - ubuntu -c 'kubectl apply -f https://raw.githubusercontent.com/ykartal2/K8s-Microservice-Phonebook-App/main/k8s/web-service.yml'
+
 
 
 
